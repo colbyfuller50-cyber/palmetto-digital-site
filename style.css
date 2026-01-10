@@ -141,6 +141,82 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
 }
 
+/* ===============================
+   MOBILE DROPDOWN MENU
+   =============================== */
+
+.mobile-menu {
+  display: none; /* hidden by default */
+}
+
+@media (max-width: 768px) {
+
+  /* Hide desktop nav on mobile */
+  .navlinks {
+    display: none;
+  }
+
+  /* Show hamburger button */
+  .mobile-toggle {
+    display: inline-flex;
+  }
+
+  /* Allow dropdown positioning */
+  .nav {
+    position: relative;
+  }
+
+  /* Dropdown panel */
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: min(320px, calc(100vw - 2rem));
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+    backdrop-filter: blur(10px);
+
+    /* closed state */
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
+  /* open state */
+  body.mobile-open .mobile-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .mobile-links {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .mobile-links a {
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+    font-weight: 750;
+    color: rgba(11, 18, 32, 0.9);
+  }
+
+  .mobile-links a:hover {
+    background: rgba(31, 120, 180, 0.10);
+  }
+
+  .mobile-links a.active {
+    background: rgba(11, 30, 58, 0.08);
+    color: var(--navy);
+  }
+}
+
+
 /* Hero */
 .hero {
   padding: 4.2rem 0 2.5rem;
@@ -329,19 +405,4 @@ textarea { min-height: 130px; resize: vertical; }
   .hero-grid { grid-template-columns: 1fr; }
   .card { grid-column: span 6; }
   .work-item { grid-column: span 12; }
-}
-@media (max-width: 720px) {
-  .navlinks, .cta { display: none; }
-  .mobile-toggle { display: inline-flex; }
-  .mobile-open .navlinks {
-    display: flex; flex-direction: column; align-items: flex-start;
-    gap: .15rem;
-    padding: .8rem 0 1rem;
-  }
-  .mobile-open .cta {
-    display: flex;
-    padding-bottom: .8rem;
-  }
-  .nav { align-items: flex-start; }
-  .card { grid-column: span 12; }
 }
