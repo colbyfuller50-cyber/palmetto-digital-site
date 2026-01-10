@@ -406,3 +406,24 @@ textarea { min-height: 130px; resize: vertical; }
   .card { grid-column: span 6; }
   .work-item { grid-column: span 12; }
 }
+
+/* Make buttons and spacing feel better on mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    gap: 0.6rem;
+  }
+
+  .work-thumb {
+    height: 160px;
+  }
+}
+
