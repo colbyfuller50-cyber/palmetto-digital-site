@@ -51,7 +51,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand img {
-  height: 60px;               /* Desktop size */
+  height: 15px;               /* Desktop size */
   width: auto;
   max-width: 200px;
   object-fit: contain;
