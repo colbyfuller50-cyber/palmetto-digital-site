@@ -13,25 +13,41 @@
 <header class="header">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="container">
+
     <div class="nav">
       <a class="brand" href="index.html" aria-label="Palmetto Digital home">
-  <img src="palmetto-digital-logo.png" alt="Palmetto Digital logo" />
-</a>
+        <img src="palmetto-digital-logo.png" alt="Palmetto Digital logo" />
+      </a>
 
-
-      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-label="Toggle menu">
+      <button class="mobile-toggle"
+              data-mobile-toggle
+              aria-expanded="false"
+              aria-controls="mobileMenu">
         ☰ Menu
       </button>
 
+      <!-- Desktop nav -->
       <nav class="navlinks" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="work.html">Past Work</a>
         <a href="consultation.html">Request a Consultation</a>
       </nav>
+
+      <!-- Mobile dropdown menu -->
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-links" aria-label="Mobile navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="work.html">Past Work</a>
+          <a href="consultation.html">Request a Consultation</a>
+        </nav>
+      </div>
     </div>
+
   </div>
 </header>
+
 
 <main id="main">
   <section class="hero">
