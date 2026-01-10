@@ -51,9 +51,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand img {
-  height: 15px;               /* Desktop size */
+  height: 60px;               /* Desktop size */
   width: auto;
-  max-width: 200px;
+  max-width: 800px;
   object-fit: contain;
   background: transparent;
   filter: drop-shadow(0 4px 10px rgba(11,30,58,.18));
