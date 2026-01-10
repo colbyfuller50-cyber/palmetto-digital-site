@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Palmetto Digital — modern websites, logo design, and branding systems." />
+  <title>Services • Palmetto Digital</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Palmetto Digital home">
+        <img src="assets/palmetto-digital-logo.png" alt="Palmetto Digital logo" />
+        <div class="name">
+          <strong>Palmetto Digital</strong>
+          <span>Websites • Logos • Brand Systems</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-label="Toggle menu">
+        ☰ Menu
+      </button>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Past Work</a>
+        <a href="consultation.html">Request a Consultation</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn ghost" href="work.html">View Work</a>
+        <a class="btn primary" href="consultation.html">Request a Consult</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Services</div>
+      <h1 class="h1" style="margin:.6rem 0 .4rem;">Services</h1>
+      <p class="lead">Modern website design, logo design, and brand systems — packaged clearly so you can choose fast.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <div class="icon blue">🧩</div>
+          <h3>Starter Website (1 Page)</h3>
+          <p>Clean landing page with sections (hero, services, testimonials, contact) — perfect to launch quickly.</p>
+          <div class="work-meta">
+            <span class="pill">Mobile-first</span><span class="pill">Fast</span><span class="pill">GitHub-ready</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon orange">📄</div>
+          <h3>Business Website (3–5 Pages)</h3>
+          <p>Full multi-page website: Home, Services, Work, and Contact/Consultation. Great for credibility + conversions.</p>
+          <div class="work-meta">
+            <span class="pill">Navigation</span><span class="pill">CTA focused</span><span class="pill">Clean UI</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon blue">🎨</div>
+          <h3>Logo Design</h3>
+          <p>Multiple logo concepts + final export pack (PNG/SVG suggestions) so you can use it everywhere.</p>
+          <div class="work-meta">
+            <span class="pill">Primary</span><span class="pill">Alt mark</span><span class="pill">Icon</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon orange">🧠</div>
+          <h3>Brand Kit</h3>
+          <p>Color palette, font pairing, logo usage rules, and basic social/banner templates.</p>
+          <div class="work-meta">
+            <span class="pill">Consistency</span><span class="pill">Professional</span><span class="pill">Reusable</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon blue">🚀</div>
+          <h3>SEO Setup</h3>
+          <p>Page titles, descriptions, clean headings, and structure to help your site be understood by search engines.</p>
+          <div class="work-meta">
+            <span class="pill">Metadata</span><span class="pill">Structure</span><span class="pill">Best practices</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="icon orange">🛠️</div>
+          <h3>Maintenance & Updates</h3>
+          <p>Optional updates, content swaps, new pages, and improvements after launch.</p>
+          <div class="work-meta">
+            <span class="pill">Monthly</span><span class="pill">As-needed</span><span class="pill">Support</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.2rem;">
+        <a class="btn primary" href="consultation.html">Request a Consultation</a>
+        <a class="btn" href="work.html" style="margin-left:.5rem;">See Past Work</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot">
+      <div class="small">
+        <strong>Palmetto Digital</strong> • Modern websites & logo design
+      </div>
+      <div class="small">
+        © <span id="year"></span> Palmetto Digital. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

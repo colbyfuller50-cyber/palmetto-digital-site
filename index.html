@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Palmetto Digital — modern websites, logo design, and branding systems." />
+  <title>Palmetto Digital</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Palmetto Digital home">
+        <img src="assets/palmetto-digital-logo.png" alt="Palmetto Digital logo" />
+        <div class="name">
+          <strong>Palmetto Digital</strong>
+          <span>Websites • Logos • Brand Systems</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-label="Toggle menu">
+        ☰ Menu
+      </button>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Past Work</a>
+        <a href="consultation.html">Request a Consultation</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn ghost" href="work.html">View Work</a>
+        <a class="btn primary" href="consultation.html">Request a Consult</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">⚡ Fast, modern, and built to convert</div>
+          <h1 class="h1">Modern websites & logo design that make your business look premium.</h1>
+          <p class="lead">
+            Palmetto Digital builds clean, mobile-first websites and bold brand visuals.
+            Perfect for small businesses, contractors, and service providers who need a professional online presence.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="consultation.html">Request a Consultation</a>
+            <a class="btn" href="services.html">Explore Services</a>
+          </div>
+
+          <div class="badges" aria-label="Highlights">
+            <span class="badge orange">Mobile-first</span>
+            <span class="badge blue">Modern UI</span>
+            <span class="badge">Fast load speed</span>
+            <span class="badge">SEO-ready</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Quick overview card">
+          <div class="mini">
+            <div class="icon orange">✦</div>
+            <h3 style="margin:0 0 .25rem;">What you get</h3>
+            <p style="margin:0;color:rgba(11,18,32,.74);">
+              A site you can actually own and update — plus branding that looks sharp everywhere.
+            </p>
+            <div class="grid" style="margin-top:.6rem;">
+              <div class="card" style="grid-column:span 12;">
+                <strong>Website</strong><br/>
+                <span style="color:rgba(11,18,32,.72);">Landing pages • Multi-page • GitHub-ready</span>
+              </div>
+              <div class="card" style="grid-column:span 12;">
+                <strong>Logo & Brand</strong><br/>
+                <span style="color:rgba(11,18,32,.72);">Logos • Color palettes • Social assets</span>
+              </div>
+              <div class="card" style="grid-column:span 12;">
+                <strong>Support</strong><br/>
+                <span style="color:rgba(11,18,32,.72);">Clear handoff • Simple edits • Guidance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Services built for real businesses</h2>
+      <p class="sub">Pick a clean starter package or mix-and-match exactly what you need.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon blue">⌁</div>
+          <h3>Custom Website</h3>
+          <p>Modern design, responsive layouts, and clean code you can host on GitHub Pages or any platform.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon orange">⚡</div>
+          <h3>Logo & Brand Kit</h3>
+          <p>Professional logo options, color palette, and a mini brand guide so everything stays consistent.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon blue">◎</div>
+          <h3>SEO & Performance</h3>
+          <p>Metadata, structure, and speed-focused setup to help you show up and load fast.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:1.2rem;">
+        <a class="btn primary" href="services.html">See All Services</a>
+        <a class="btn" href="work.html" style="margin-left:.5rem;">View Past Work</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot">
+      <div class="small">
+        <strong>Palmetto Digital</strong> • Modern websites & logo design
+      </div>
+      <div class="small">
+        © <span id="year"></span> Palmetto Digital. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

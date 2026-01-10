@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Palmetto Digital — modern websites, logo design, and branding systems." />
+  <title>Past Work • Palmetto Digital</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Palmetto Digital home">
+        <img src="assets/palmetto-digital-logo.png" alt="Palmetto Digital logo" />
+        <div class="name">
+          <strong>Palmetto Digital</strong>
+          <span>Websites • Logos • Brand Systems</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-label="Toggle menu">
+        ☰ Menu
+      </button>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Past Work</a>
+        <a href="consultation.html">Request a Consultation</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn ghost" href="work.html">View Work</a>
+        <a class="btn primary" href="consultation.html">Request a Consult</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Past Work</div>
+      <h1 class="h1" style="margin:.6rem 0 .4rem;">Past Work</h1>
+      <p class="lead">A few sample project layouts. Replace titles and descriptions with your real client work.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="work-grid">
+        <article class="work-item">
+          <div class="work-thumb" role="img" aria-label="Project thumbnail"></div>
+          <div class="work-body">
+            <h3>Service Business Website</h3>
+            <p style="margin:0;color:rgba(11,18,32,.74);">
+              Clean multi-page site with strong calls-to-action and modern layout.
+            </p>
+            <div class="work-meta">
+              <span class="pill">Website</span>
+              <span class="pill">Responsive</span>
+              <span class="pill">Modern UI</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-thumb" role="img" aria-label="Project thumbnail"></div>
+          <div class="work-body">
+            <h3>Logo + Brand Refresh</h3>
+            <p style="margin:0;color:rgba(11,18,32,.74);">
+              New logo system with color palette and social-ready assets.
+            </p>
+            <div class="work-meta">
+              <span class="pill">Logo</span>
+              <span class="pill">Brand Kit</span>
+              <span class="pill">Social Assets</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-thumb" role="img" aria-label="Project thumbnail"></div>
+          <div class="work-body">
+            <h3>Landing Page (Lead Gen)</h3>
+            <p style="margin:0;color:rgba(11,18,32,.74);">
+              Simple landing page designed to capture leads and push bookings.
+            </p>
+            <div class="work-meta">
+              <span class="pill">Landing</span>
+              <span class="pill">Conversion</span>
+              <span class="pill">Fast</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-thumb" role="img" aria-label="Project thumbnail"></div>
+          <div class="work-body">
+            <h3>Portfolio Website</h3>
+            <p style="margin:0;color:rgba(11,18,32,.74);">
+              Gallery-focused design with smooth navigation and clean typography.
+            </p>
+            <div class="work-meta">
+              <span class="pill">Portfolio</span>
+              <span class="pill">Grid</span>
+              <span class="pill">Branding</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:1.2rem;">
+        <a class="btn primary" href="consultation.html">Request a Consultation</a>
+        <a class="btn" href="services.html" style="margin-left:.5rem;">View Services</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot">
+      <div class="small">
+        <strong>Palmetto Digital</strong> • Modern websites & logo design
+      </div>
+      <div class="small">
+        © <span id="year"></span> Palmetto Digital. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
