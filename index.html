@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,76 @@
   <meta name="description" content="Palmetto Digital — modern websites, logo design, and branding systems." />
   <title>Palmetto Digital</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Page-only styles to make the Home hero look like your example (image + dark overlay + centered text/buttons) -->
+  <style>
+    /* HERO BANNER (Home only) */
+    .hero-banner{
+      /* ✅ Replace hero-bg.jpg with your own image file name */
+      background:
+        linear-gradient(180deg, rgba(11,30,58,.72), rgba(11,30,58,.72)),
+        radial-gradient(900px 500px at 20% 10%, rgba(242,140,40,.20), transparent 60%),
+        radial-gradient(800px 520px at 85% 15%, rgba(31,120,180,.18), transparent 55%),
+        url("hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-banner .hero-inner{
+      text-align: center;
+      color: #fff;
+      padding: 4.5rem 0;
+    }
+
+    .hero-banner h1{
+      margin: 0 0 .65rem;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .hero-banner p{
+      margin: 0 auto 1.35rem;
+      max-width: 70ch;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.88);
+      text-shadow: 0 10px 28px rgba(0,0,0,.30);
+    }
+
+    .hero-banner .hero-actions{
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
+
+    /* Make the secondary button readable on dark hero */
+    .hero-banner .btn{
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.18);
+      color: #fff;
+    }
+
+    .hero-banner .btn:hover{
+      box-shadow: 0 16px 40px rgba(0,0,0,.25);
+    }
+
+    /* Mobile hero spacing */
+    @media (max-width: 768px){
+      .hero-banner{
+        min-height: calc(92vh - 76px);
+      }
+      .hero-banner .hero-inner{
+        padding: 3.6rem 0;
+      }
+      .hero-banner .hero-actions .btn{
+        width: 100%;
+        max-width: 420px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -48,60 +117,27 @@
   </div>
 </header>
 
-
 <main id="main">
-  <section class="hero">
+
+  <!-- HERO (like your example) -->
+  <section class="hero-banner" aria-label="Hero">
     <div class="container">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">⚡ Fast, modern, and built to convert</div>
-          <h1 class="h1">Modern websites & logo design that make your business look premium.</h1>
-          <p class="lead">
-            Palmetto Digital builds clean, mobile-first websites and bold brand visuals.
-            Perfect for small businesses, contractors, and service providers who need a professional online presence.
-          </p>
+      <div class="hero-inner">
+        <h1>Modern Websites & Logo Design</h1>
+        <p>
+          Palmetto Digital creates clean, mobile-first websites and bold brand visuals that help
+          businesses look premium and convert more customers.
+        </p>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="consultation.html">Request a Consultation</a>
-            <a class="btn" href="services.html">Explore Services</a>
-          </div>
-
-          <div class="badges" aria-label="Highlights">
-            <span class="badge orange">Mobile-first</span>
-            <span class="badge blue">Modern UI</span>
-            <span class="badge">Fast load speed</span>
-            <span class="badge">SEO-ready</span>
-          </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="consultation.html">Request a Consultation</a>
+          <a class="btn" href="services.html">View Services</a>
         </div>
-
-        <div class="hero-card" aria-label="Quick overview card">
-          <div class="mini">
-            <div class="icon orange">✦</div>
-            <h3 style="margin:0 0 .25rem;">What you get</h3>
-            <p style="margin:0;color:rgba(11,18,32,.74);">
-              A site you can actually own and update — plus branding that looks sharp everywhere.
-            </p>
-            <div class="grid" style="margin-top:.6rem;">
-              <div class="card" style="grid-column:span 12;">
-                <strong>Website</strong><br/>
-                <span style="color:rgba(11,18,32,.72);">Landing pages • Multi-page • GitHub-ready</span>
-              </div>
-              <div class="card" style="grid-column:span 12;">
-                <strong>Logo & Brand</strong><br/>
-                <span style="color:rgba(11,18,32,.72);">Logos • Color palettes • Social assets</span>
-              </div>
-              <div class="card" style="grid-column:span 12;">
-                <strong>Support</strong><br/>
-                <span style="color:rgba(11,18,32,.72);">Clear handoff • Simple edits • Guidance</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
+  <!-- SECTION BELOW HERO -->
   <section class="section">
     <div class="container">
       <h2>Services built for real businesses</h2>
@@ -133,6 +169,7 @@
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
