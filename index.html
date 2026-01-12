@@ -7,11 +7,10 @@
   <title>Palmetto Digital</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Page-only styles to make the Home hero look like your example (image + dark overlay + centered text/buttons) -->
+  <!-- Home-only enhancements -->
   <style>
-    /* HERO BANNER (Home only) */
+    /* HERO BANNER */
     .hero-banner{
-      /* ✅ Replace hero-bg.jpg with your own image file name */
       background:
         linear-gradient(180deg, rgba(11,30,58,.72), rgba(11,30,58,.72)),
         radial-gradient(900px 500px at 20% 10%, rgba(242,140,40,.20), transparent 60%),
@@ -24,88 +23,96 @@
       align-items: center;
     }
 
-    .hero-banner .hero-inner{
+    .hero-inner{
       text-align: center;
       color: #fff;
       padding: 4.5rem 0;
     }
 
-    .hero-banner h1{
-      margin: 0 0 .65rem;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
+    .hero-inner h1{
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
       line-height: 1.05;
-      letter-spacing: -0.6px;
-      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+      margin-bottom: .6rem;
+      text-shadow: 0 12px 40px rgba(0,0,0,.45);
     }
 
-    .hero-banner p{
-      margin: 0 auto 1.35rem;
+    .hero-inner p{
       max-width: 70ch;
-      font-size: 1.05rem;
+      margin: 0 auto 1.6rem;
       color: rgba(255,255,255,.88);
-      text-shadow: 0 10px 28px rgba(0,0,0,.30);
+      text-shadow: 0 10px 28px rgba(0,0,0,.35);
     }
 
-    .hero-banner .hero-actions{
-      justify-content: center;
-      margin-top: 1.2rem;
-    }
-
-    /* Make the secondary button readable on dark hero */
-    .hero-banner .btn{
-      background: rgba(255,255,255,.12);
-      border-color: rgba(255,255,255,.18);
+    /* Transparent orange CTA */
+    .btn.hero-primary{
+      background: rgba(242,140,40,.18);
+      border: 1px solid rgba(242,140,40,.55);
       color: #fff;
+      backdrop-filter: blur(6px);
     }
 
-    .hero-banner .btn:hover{
-      box-shadow: 0 16px 40px rgba(0,0,0,.25);
+    .btn.hero-primary:hover{
+      background: rgba(242,140,40,.28);
+      box-shadow: 0 0 0 6px rgba(242,140,40,.18);
     }
 
-    /* Mobile hero spacing */
+    /* SERVICES – modern glow cards */
+    .services-glow .card{
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(11,30,58,.10);
+      box-shadow:
+        0 10px 30px rgba(11,30,58,.10),
+        0 0 0 rgba(242,140,40,0);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .services-glow .card:hover{
+      transform: translateY(-4px);
+      box-shadow:
+        0 18px 45px rgba(11,30,58,.18),
+        0 0 0 6px rgba(242,140,40,.15);
+    }
+
+    /* Computer screen icon */
+    .icon.screen{
+      font-size: 1.4rem;
+    }
+
     @media (max-width: 768px){
       .hero-banner{
         min-height: calc(92vh - 76px);
       }
-      .hero-banner .hero-inner{
-        padding: 3.6rem 0;
-      }
-      .hero-banner .hero-actions .btn{
+      .hero-actions .btn{
         width: 100%;
         max-width: 420px;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header class="header">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="container">
-
     <div class="nav">
-      <a class="brand" href="index.html" aria-label="Palmetto Digital home">
+      <a class="brand" href="index.html">
         <img src="palmetto-digital-logo.png" alt="Palmetto Digital logo" />
       </a>
 
-      <button class="mobile-toggle"
-              data-mobile-toggle
-              aria-expanded="false"
-              aria-controls="mobileMenu">
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobileMenu">
         ☰ Menu
       </button>
 
-      <!-- Desktop nav -->
-      <nav class="navlinks" aria-label="Primary navigation">
+      <nav class="navlinks">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="work.html">Past Work</a>
         <a href="consultation.html">Request a Consultation</a>
       </nav>
 
-      <!-- Mobile dropdown menu -->
       <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-        <nav class="mobile-links" aria-label="Mobile navigation">
+        <nav class="mobile-links">
           <a href="index.html">Home</a>
           <a href="services.html">Services</a>
           <a href="work.html">Past Work</a>
@@ -113,59 +120,52 @@
         </nav>
       </div>
     </div>
-
   </div>
 </header>
 
 <main id="main">
 
-  <!-- HERO (like your example) -->
-  <section class="hero-banner" aria-label="Hero">
+  <!-- HERO -->
+  <section class="hero-banner">
     <div class="container">
       <div class="hero-inner">
         <h1>Modern Websites & Logo Design</h1>
         <p>
-          Palmetto Digital creates clean, mobile-first websites and bold brand visuals that help
-          businesses look premium and convert more customers.
+          Clean, mobile-first websites and bold brand visuals that make businesses look premium and convert better.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="consultation.html">Request a Consultation</a>
+          <a class="btn hero-primary" href="consultation.html">Request a Consultation</a>
           <a class="btn" href="services.html">View Services</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION BELOW HERO -->
-  <section class="section">
+  <!-- SERVICES -->
+  <section class="section services-glow">
     <div class="container">
       <h2>Services built for real businesses</h2>
-      <p class="sub">Pick a clean starter package or mix-and-match exactly what you need.</p>
+      <p class="sub">Professional digital services designed to scale with you.</p>
 
       <div class="grid">
         <div class="card">
-          <div class="icon blue">⌁</div>
+          <div class="icon screen">🖥️</div>
           <h3>Custom Website</h3>
-          <p>Modern design, responsive layouts, and clean code you can host on GitHub Pages or any platform.</p>
+          <p>Modern layouts, responsive design, and clean code you fully own.</p>
         </div>
 
         <div class="card">
           <div class="icon orange">⚡</div>
           <h3>Logo & Brand Kit</h3>
-          <p>Professional logo options, color palette, and a mini brand guide so everything stays consistent.</p>
+          <p>Professional logos, color palettes, and brand consistency across platforms.</p>
         </div>
 
         <div class="card">
           <div class="icon blue">◎</div>
           <h3>SEO & Performance</h3>
-          <p>Metadata, structure, and speed-focused setup to help you show up and load fast.</p>
+          <p>Optimized structure, metadata, and fast load speeds from day one.</p>
         </div>
-      </div>
-
-      <div style="margin-top:1.2rem;">
-        <a class="btn primary" href="services.html">See All Services</a>
-        <a class="btn" href="work.html" style="margin-left:.5rem;">View Past Work</a>
       </div>
     </div>
   </section>
