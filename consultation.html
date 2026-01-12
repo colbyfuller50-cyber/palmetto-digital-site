@@ -7,7 +7,148 @@
   <meta name="description" content="Palmetto Digital — modern websites, logo design, and branding systems." />
   <title>Request a Consultation • Palmetto Digital</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Consultation page-only styling (mirrors the form layout/style in your screenshot + matches your theme) -->
+  <style>
+    .pagehead .h1 { margin: .6rem 0 .4rem; }
+
+    /* Centered form container like the screenshot */
+    .form-wrap{
+      display: grid;
+      place-items: center;
+    }
+
+    .form-card{
+      width: min(860px, 100%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 14px 32px rgba(11,30,58,.10);
+      overflow: hidden;
+    }
+
+    /* Card header strip */
+    .form-head{
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,.72),
+        rgba(255,255,255,.50)
+      );
+    }
+
+    .form-head .badge-icon{
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: rgba(31,120,180,.10);
+      color: var(--navy);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .form-head h2{
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: -0.2px;
+      color: var(--navy);
+    }
+
+    .form-body{
+      padding: 1.15rem;
+    }
+
+    /* Grid fields like screenshot (2-column rows where possible) */
+    .form-grid{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .field{ display: grid; gap: .35rem; }
+    .col-12{ grid-column: span 12; }
+    .col-6{ grid-column: span 6; }
+    .col-4{ grid-column: span 4; }
+
+    label{
+      font-weight: 850;
+      font-size: .95rem;
+      color: rgba(11,18,32,.88);
+    }
+
+    input, textarea, select{
+      padding: .8rem .9rem;
+      border-radius: 14px;
+      border: 1px solid rgba(11,30,58,.14);
+      background: rgba(255,255,255,.90);
+      font: inherit;
+      outline: none;
+      transition: box-shadow .15s ease, border-color .15s ease;
+    }
+
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(31,120,180,.45);
+      box-shadow: 0 0 0 4px rgba(31,120,180,.14);
+    }
+
+    textarea{ min-height: 140px; resize: vertical; }
+
+    .helper{
+      margin: .15rem 0 0;
+      font-size: .9rem;
+      color: rgba(11,18,32,.62);
+    }
+
+    /* Optional "Preview" style button (like screenshot’s extra action) */
+    .mini-actions{
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-top: .2rem;
+    }
+
+    .btn.secondary{
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(11,30,58,.14);
+      font-weight: 850;
+    }
+
+    /* Submit row centered */
+    .submit-row{
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    /* Make the primary button slightly more “CTA” like your screenshot style */
+    .btn.primary{
+      padding: .85rem 1.25rem;
+      border-radius: 14px;
+    }
+
+    /* Center footer like your other updated pages */
+    .footer .foot{
+      justify-content: center !important;
+      text-align: center;
+    }
+    .footer .foot > div{ width: 100%; }
+
+    /* Mobile: collapse to single column */
+    @media (max-width: 820px){
+      .col-6, .col-4{ grid-column: span 12; }
+      .form-body{ padding: 1rem; }
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="header">
@@ -52,61 +193,100 @@
   <section class="pagehead">
     <div class="container">
       <div class="breadcrumb">Home / Request a Consultation</div>
-      <h1 class="h1" style="margin:.6rem 0 .4rem;">Request a Consultation</h1>
+      <h1 class="h1">Request a Consultation</h1>
       <p class="lead">
-        Tell me what you need and I’ll follow up with next steps. (Tip: connect this form to Formspree when ready.)
+        Complete the form below and I’ll review your request. I’ll follow up with next steps.
       </p>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <form class="form" data-consultation method="POST" action="https://formspree.io/f/your-form-id">
-        <div class="field">
-          <label for="name">Full Name</label>
-          <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
+    <div class="container form-wrap">
+
+      <div class="form-card">
+
+        <!-- Card header like screenshot -->
+        <div class="form-head">
+          <div class="badge-icon" aria-hidden="true">✎</div>
+          <h2>Consultation Request Form</h2>
         </div>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+        <div class="form-body">
+          <form data-consultation method="POST" action="https://formspree.io/f/your-form-id">
+
+            <div class="form-grid">
+
+              <!-- Full Name -->
+              <div class="field col-12">
+                <label for="name">Person or Company</label>
+                <input id="name" name="name" autocomplete="name" required placeholder="Ex: John Smith or ABC Construction" />
+              </div>
+
+              <!-- Email / Phone -->
+              <div class="field col-6">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+              </div>
+
+              <div class="field col-6">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(803) 555-1234" />
+              </div>
+
+              <!-- Service / Budget -->
+              <div class="field col-6">
+                <label for="service">What do you need?</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Website (1-page)</option>
+                  <option>Website (multi-page)</option>
+                  <option>Logo design</option>
+                  <option>Brand kit</option>
+                  <option>Website + Logo bundle</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="field col-6">
+                <label for="budget">Estimated Budget</label>
+                <select id="budget" name="budget">
+                  <option>$300 – $750</option>
+                  <option>$750 – $1,500</option>
+                  <option>$1,500 – $3,000</option>
+                  <option>$3,000+</option>
+                </select>
+              </div>
+
+              <!-- Timeline -->
+              <div class="field col-12">
+                <label for="timeline">Timeline (optional)</label>
+                <input id="timeline" name="timeline" placeholder="Ex: ASAP / 2 weeks / 1 month" />
+                <p class="helper">Tip: Share your ideal launch date if you have one.</p>
+              </div>
+
+              <!-- Project Details -->
+              <div class="field col-12">
+                <label for="details">Project Details</label>
+                <textarea id="details" name="details" placeholder="Tell me about your business, goals, timeline, and what you want your website/logo to do..."></textarea>
+              </div>
+
+            </div>
+
+            <!-- Submit -->
+            <div class="submit-row">
+              <button class="btn primary" type="submit">Send Request</button>
+            </div>
+
+            <p class="small" data-form-message style="display:none;margin:.85rem 0 0;color:rgba(11,18,32,.70);"></p>
+
+            <p class="small" style="margin:.6rem 0 0;color:rgba(11,18,32,.60); text-align:center;">
+              To activate the form: replace <strong>your-form-id</strong> in the form action URL with your Formspree ID.
+            </p>
+
+          </form>
         </div>
+      </div>
 
-        <div class="field">
-          <label for="service">What do you need?</label>
-          <select id="service" name="service" required>
-            <option value="" selected disabled>Select one</option>
-            <option>Website (1-page)</option>
-            <option>Website (multi-page)</option>
-            <option>Logo design</option>
-            <option>Brand kit</option>
-            <option>Website + Logo bundle</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="budget">Estimated Budget</label>
-          <select id="budget" name="budget">
-            <option>$300 – $750</option>
-            <option>$750 – $1,500</option>
-            <option>$1,500 – $3,000</option>
-            <option>$3,000+</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="details">Project Details</label>
-          <textarea id="details" name="details" placeholder="Tell me about your business, timeline, and what you want your website/logo to do..."></textarea>
-        </div>
-
-        <button class="btn primary" type="submit">Send Request</button>
-        <p class="small" data-form-message style="display:none;margin:0;color:rgba(11,18,32,.70);"></p>
-
-        <p class="small" style="margin:.4rem 0 0;color:rgba(11,18,32,.60);">
-          To activate the form: replace <strong>your-form-id</strong> in the form action URL with your Formspree ID.
-        </p>
-      </form>
     </div>
   </section>
 </main>
@@ -131,3 +311,4 @@
 
 </body>
 </html>
+
