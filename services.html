@@ -7,22 +7,194 @@
   <meta name="description" content="Palmetto Digital — modern websites, logo design, and branding systems." />
   <title>Services • Palmetto Digital</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Services-only polish (matches the modern look from your updated Home page) -->
+  <style>
+    /* Page header spacing + clean layout */
+    .pagehead .h1 { margin: .6rem 0 .4rem; }
+
+    /* Pricing/Packages layout */
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .package-card{
+      grid-column: span 6;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(11,30,58,.10);
+      box-shadow:
+        0 10px 28px rgba(11,30,58,.10),
+        0 0 0 0 rgba(31,120,180,.0);
+      padding: 1.2rem;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .package-card:hover{
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 40px rgba(11,30,58,.16),
+        0 0 0 6px rgba(31,120,180,.10);
+    }
+
+    .package-top{
+      display: flex;
+      gap: .85rem;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: .75rem;
+    }
+
+    .package-title{
+      display: grid;
+      gap: .2rem;
+    }
+
+    .package-title h2{
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.2px;
+    }
+
+    .package-title .tag{
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-weight: 800;
+      font-size: .9rem;
+      color: rgba(11,18,32,.78);
+    }
+
+    .price{
+      display: inline-flex;
+      align-items: baseline;
+      gap: .35rem;
+      padding: .45rem .65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .price strong{
+      font-size: 1.05rem;
+      letter-spacing: -0.2px;
+    }
+
+    .price span{
+      font-size: .9rem;
+      color: rgba(11,18,32,.65);
+      font-weight: 800;
+    }
+
+    .feat{
+      list-style: none;
+      padding: 0;
+      margin: .75rem 0 0;
+      display: grid;
+      gap: .55rem;
+    }
+
+    .feat li{
+      display: flex;
+      gap: .55rem;
+      align-items: flex-start;
+      color: rgba(11,18,32,.78);
+      font-weight: 650;
+    }
+
+    .check{
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: rgba(31,120,180,.10);
+      color: var(--navy);
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+
+    /* Option 1 highlight */
+    .package-card.recommended{
+      border: 1px solid rgba(242,140,40,.35);
+      box-shadow:
+        0 12px 32px rgba(11,30,58,.12),
+        0 0 0 6px rgba(242,140,40,.10);
+    }
+
+    .badge-pill{
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: .82rem;
+      border: 1px solid rgba(242,140,40,.35);
+      background: rgba(242,140,40,.12);
+      color: #1a1208;
+      white-space: nowrap;
+    }
+
+    /* “Also available” grid (cleaner service list) */
+    .services-list .card{
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(11,30,58,.10);
+      box-shadow:
+        0 10px 28px rgba(11,30,58,.10),
+        0 0 0 0 rgba(31,120,180,.0);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .services-list .card:hover{
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 40px rgba(11,30,58,.16),
+        0 0 0 6px rgba(31,120,180,.10);
+    }
+
+    /* CTA row */
+    .cta-row{
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    /* Make footer centered on this page too (if not already global) */
+    .footer .foot{
+      justify-content: center !important;
+      text-align: center;
+    }
+    .footer .foot > div{ width: 100%; }
+
+    /* Mobile */
+    @media (max-width: 880px){
+      .package-card{ grid-column: span 12; }
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="header">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="container">
-
     <div class="nav">
       <a class="brand" href="index.html" aria-label="Palmetto Digital home">
         <img src="palmetto-digital-logo.png" alt="Palmetto Digital logo" />
       </a>
 
-      <button class="mobile-toggle"
-              data-mobile-toggle
-              aria-expanded="false"
-              aria-controls="mobileMenu">
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobileMenu">
         ☰ Menu
       </button>
 
@@ -44,83 +216,149 @@
         </nav>
       </div>
     </div>
-
   </div>
 </header>
 
 <main id="main">
+
   <section class="pagehead">
     <div class="container">
       <div class="breadcrumb">Home / Services</div>
-      <h1 class="h1" style="margin:.6rem 0 .4rem;">Services</h1>
-      <p class="lead">Modern website design, logo design, and brand systems — packaged clearly so you can choose fast.</p>
+      <h1 class="h1">Services & Packages</h1>
+      <p class="lead">
+        Clean, mobile-first websites and sharp brand visuals — packaged clearly so you can choose fast.
+      </p>
     </div>
   </section>
 
+  <!-- PACKAGES -->
   <section class="section">
     <div class="container">
+      <h2 style="margin:0 0 .4rem;">Choose a package</h2>
+      <p class="sub" style="margin:0 0 1.2rem;">
+        Transparent pricing. Professional delivery. Built for small businesses that want a premium online presence.
+      </p>
+
+      <div class="packages">
+
+        <!-- Option 1 -->
+        <article class="package-card recommended">
+          <div class="package-top">
+            <div class="package-title">
+              <div class="badge-pill">⭐ Recommended</div>
+              <h2>Option 1: Flat Package</h2>
+              <div class="tag"><span class="check">✓</span> Custom Professional Website</div>
+            </div>
+            <div class="price" aria-label="Starting price">
+              <strong>$3,500</strong> <span>starting</span>
+            </div>
+          </div>
+
+          <p style="margin:0;color:rgba(11,18,32,.74);">
+            A complete website build that looks premium, loads fast, and is designed to convert.
+          </p>
+
+          <ul class="feat" aria-label="Flat package features">
+            <li><span class="check">✓</span> 5–7 high-impact sections (hero, services, proof, about, CTA, contact)</li>
+            <li><span class="check">✓</span> Mobile responsive (looks great on phones + tablets)</li>
+            <li><span class="check">✓</span> SEO-ready structure (titles, descriptions, headings)</li>
+            <li><span class="check">✓</span> Analytics included (traffic + performance tracking)</li>
+            <li><span class="check">✓</span> GitHub-ready handoff (you own the code)</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn primary" href="consultation.html">Request a Consultation</a>
+            <a class="btn" href="work.html">View Past Work</a>
+          </div>
+        </article>
+
+        <!-- Option 2 -->
+        <article class="package-card">
+          <div class="package-top">
+            <div class="package-title">
+              <h2>Option 2: Retainer Model</h2>
+              <div class="tag"><span class="check">✓</span> Smart long-term support + improvements</div>
+            </div>
+            <div class="price" aria-label="Retainer pricing">
+              <strong>$1,500</strong> <span>setup</span>
+            </div>
+          </div>
+
+          <p style="margin:0;color:rgba(11,18,32,.74);">
+            Ideal if you want ongoing improvements without paying for a new build every time.
+          </p>
+
+          <ul class="feat" aria-label="Retainer features">
+            <li><span class="check">✓</span> Setup: <strong>$1,500</strong> (baseline site + launch)</li>
+            <li><span class="check">✓</span> <strong>$150–$300/month</strong> for ongoing work:</li>
+            <li style="margin-left:2rem;"><span class="check">✓</span> Updates & new sections/pages</li>
+            <li style="margin-left:2rem;"><span class="check">✓</span> Content edits (text/images)</li>
+            <li style="margin-left:2rem;"><span class="check">✓</span> SEO tweaks and performance improvements</li>
+            <li style="margin-left:2rem;"><span class="check">✓</span> Ongoing support + guidance</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn primary" href="consultation.html">Start with a Consultation</a>
+            <a class="btn" href="work.html">See Past Work</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS / ALSO AVAILABLE -->
+  <section class="section services-list">
+    <div class="container">
+      <h2 style="margin:0 0 .4rem;">Add-ons & extras</h2>
+      <p class="sub" style="margin:0 0 1.2rem;">
+        Mix-and-match extras if you want a full brand presence across web and social.
+      </p>
+
       <div class="grid">
         <div class="card">
-          <div class="icon blue">🧩</div>
-          <h3>Starter Website (1 Page)</h3>
-          <p>Clean landing page with sections (hero, services, testimonials, contact) — perfect to launch quickly.</p>
+          <div class="icon blue">🖥️</div>
+          <h3>Additional Pages</h3>
+          <p>Extra pages beyond your package (FAQs, Gallery, Landing Pages, etc.) with matching design.</p>
           <div class="work-meta">
-            <span class="pill">Mobile-first</span><span class="pill">Fast</span><span class="pill">GitHub-ready</span>
+            <span class="pill">Consistent UI</span><span class="pill">Fast</span><span class="pill">Clean</span>
           </div>
         </div>
 
         <div class="card">
-          <div class="icon orange">📄</div>
-          <h3>Business Website (3–5 Pages)</h3>
-          <p>Full multi-page website: Home, Services, Work, and Contact/Consultation. Great for credibility + conversions.</p>
-          <div class="work-meta">
-            <span class="pill">Navigation</span><span class="pill">CTA focused</span><span class="pill">Clean UI</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="icon blue">🎨</div>
+          <div class="icon orange">🎨</div>
           <h3>Logo Design</h3>
-          <p>Multiple logo concepts + final export pack (PNG/SVG suggestions) so you can use it everywhere.</p>
+          <p>Logo concepts + a final export pack you can use everywhere (web, print, social).</p>
           <div class="work-meta">
-            <span class="pill">Primary</span><span class="pill">Alt mark</span><span class="pill">Icon</span>
+            <span class="pill">Primary mark</span><span class="pill">Alt mark</span><span class="pill">Icon</span>
           </div>
         </div>
 
         <div class="card">
-          <div class="icon orange">🧠</div>
+          <div class="icon blue">🧠</div>
           <h3>Brand Kit</h3>
-          <p>Color palette, font pairing, logo usage rules, and basic social/banner templates.</p>
+          <p>Color palette, fonts, usage guidance, and simple social/banner templates.</p>
           <div class="work-meta">
             <span class="pill">Consistency</span><span class="pill">Professional</span><span class="pill">Reusable</span>
           </div>
         </div>
 
         <div class="card">
-          <div class="icon blue">🚀</div>
+          <div class="icon orange">🚀</div>
           <h3>SEO Setup</h3>
-          <p>Page titles, descriptions, clean headings, and structure to help your site be understood by search engines.</p>
+          <p>Titles, descriptions, clean headings, and structure that helps search engines understand your site.</p>
           <div class="work-meta">
             <span class="pill">Metadata</span><span class="pill">Structure</span><span class="pill">Best practices</span>
           </div>
         </div>
-
-        <div class="card">
-          <div class="icon orange">🛠️</div>
-          <h3>Maintenance & Updates</h3>
-          <p>Optional updates, content swaps, new pages, and improvements after launch.</p>
-          <div class="work-meta">
-            <span class="pill">Monthly</span><span class="pill">As-needed</span><span class="pill">Support</span>
-          </div>
-        </div>
       </div>
 
-      <div style="margin-top:1.2rem;">
+      <div class="cta-row">
         <a class="btn primary" href="consultation.html">Request a Consultation</a>
-        <a class="btn" href="work.html" style="margin-left:.5rem;">See Past Work</a>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
