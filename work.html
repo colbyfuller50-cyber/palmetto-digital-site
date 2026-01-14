@@ -7,60 +7,77 @@
   <title>Past Work • Palmetto Digital</title>
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Work page-only polish: modern work boxes that match your theme -->
   <style>
+    /* Page header spacing match */
     .pagehead .h1 { margin: .6rem 0 .4rem; }
 
-    .work-slider{
-      position: relative;
+    /* Modern gallery grid */
+    .work-gallery{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    /* Card */
+    .work-card{
+      grid-column: span 6;
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.78);
-      box-shadow: 0 14px 32px rgba(11,30,58,.10);
+      background: rgba(255,255,255,.80);
+      box-shadow: 0 12px 30px rgba(11,30,58,.10);
       overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .work-track{
-      display: flex;
-      transition: transform .35s ease;
+    .work-card:hover{
+      transform: translateY(-3px);
+      box-shadow:
+        0 18px 45px rgba(11,30,58,.16),
+        0 0 0 6px rgba(31,120,180,.10);
     }
 
-    .work-slide{
-      min-width: 100%;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-    }
-
-    /* IMAGE AREA */
-    .work-visual{
+    /* Image box */
+    .work-media{
       position: relative;
-      min-height: 340px;
+      height: 220px;
+      background:
+        linear-gradient(135deg, rgba(11,30,58,.92), rgba(31,120,180,.70)),
+        radial-gradient(650px 240px at 20% 40%, rgba(242,140,40,.35), transparent 65%);
       overflow: hidden;
     }
 
-    .work-visual img{
+    /* Actual image */
+    .work-media img{
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      display: block;
+      transform: scale(1.01);
       filter: saturate(1.05) contrast(1.02);
     }
 
-    /* Dark overlay for branding */
-    .work-visual::after{
+    /* Dark overlay so pill text always readable */
+    .work-media::after{
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(180deg, rgba(11,30,58,.55), rgba(11,30,58,.25));
+      background: linear-gradient(180deg, rgba(11,30,58,.55), rgba(11,30,58,.18));
       pointer-events:none;
     }
 
+    /* Tag pill overlay */
     .overlay-pill{
       position: absolute;
-      left: 16px;
-      top: 16px;
+      left: 14px;
+      top: 14px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
       padding: .35rem .6rem;
       border-radius: 999px;
       font-weight: 900;
@@ -69,33 +86,34 @@
       background: rgba(255,255,255,.14);
       color: #fff;
       backdrop-filter: blur(8px);
-      z-index: 2;
+      white-space: nowrap;
     }
 
-    .work-content{
-      padding: 1.35rem;
+    /* Body */
+    .work-body{
+      padding: 1.05rem 1.1rem 1.15rem;
       display: grid;
-      align-content: center;
-      gap: .7rem;
-      background: rgba(255,255,255,.76);
+      gap: .55rem;
     }
 
-    .work-content h3{
+    .work-body h3{
       margin: 0;
-      font-size: 1.35rem;
+      font-size: 1.15rem;
+      letter-spacing: -.2px;
       color: var(--navy);
     }
 
-    .work-content p{
+    .work-body p{
       margin: 0;
       color: rgba(11,18,32,.74);
-      max-width: 62ch;
+      line-height: 1.55;
     }
 
     .work-meta{
       display: flex;
       gap: .5rem;
       flex-wrap: wrap;
+      margin-top: .25rem;
     }
 
     .pill{
@@ -107,101 +125,81 @@
       background: rgba(255,255,255,.55);
     }
 
-    .work-controls{
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .work-btn{
-      pointer-events: auto;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.72);
-      box-shadow: 0 12px 26px rgba(11,30,58,.14);
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .work-btn.prev{ left: 14px; }
-    .work-btn.next{ right: 14px; }
-
-    .work-dots{
-      display: flex;
-      justify-content: center;
-      gap: .45rem;
-      margin-top: .9rem;
-    }
-
-    .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(11,30,58,.18);
-      background: rgba(255,255,255,.55);
-      cursor: pointer;
-    }
-
-    .dot.active{
-      width: 26px;
-      background: rgba(31,120,180,.18);
-    }
-
-    @media (max-width: 880px){
-      .work-slide{ grid-template-columns: 1fr; }
-      .work-visual{ min-height: 240px; }
-    }
-
+    /* Footer centered (if not global already) */
     .footer .foot{
       justify-content: center !important;
       text-align: center;
     }
-    .footer .foot > div{ width:100%; }
+    .footer .foot > div{ width: 100%; }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .work-card{ grid-column: span 12; }
+      .work-media{ height: 240px; }
+    }
   </style>
 </head>
 
 <body>
 
 <header class="header">
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="container">
     <div class="nav">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Palmetto Digital home">
         <img src="palmetto-digital-logo.png" alt="Palmetto Digital logo" />
       </a>
+
+      <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobileMenu">
+        ☰ Menu
+      </button>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Past Work</a>
+        <a href="consultation.html">Request a Consultation</a>
+      </nav>
+
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <nav class="mobile-links" aria-label="Mobile navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="work.html">Past Work</a>
+          <a href="consultation.html">Request a Consultation</a>
+        </nav>
+      </div>
     </div>
   </div>
 </header>
 
 <main id="main">
 
-<section class="pagehead">
-  <div class="container">
-    <div class="breadcrumb">Home / Past Work</div>
-    <h1 class="h1">Past Work</h1>
-    <p class="lead">Swipe through real examples of my work.</p>
-  </div>
-</section>
+  <section class="pagehead">
+    <div class="container">
+      <div class="breadcrumb">Home / Past Work</div>
+      <h1 class="h1">Past Work</h1>
+      <p class="lead">
+        Replace the images + text with your real client projects. Each box is built for a clean, premium portfolio.
+      </p>
+    </div>
+  </section>
 
-<section class="section">
-  <div class="container">
+  <section class="section">
+    <div class="container">
 
-    <div class="work-slider">
-      <div class="work-track" data-track>
+      <div class="work-gallery">
 
-        <!-- SLIDE 1 -->
-        <article class="work-slide">
-          <div class="work-visual">
-            <img src="assets/work/service-site.jpg" alt="Service business website">
+        <!-- CARD 1 -->
+        <article class="work-card">
+          <div class="work-media">
+            <!-- Put your image in: assets/work/ -->
+            <img src="assets/work/project-1.jpg" alt="Project 1 preview" />
             <span class="overlay-pill">Website Build</span>
           </div>
-          <div class="work-content">
+          <div class="work-body">
             <h3>Service Business Website</h3>
-            <p>Multi-page website built to convert visitors into customers.</p>
+            <p>Short description here (what you built, results, and what makes it premium).</p>
             <div class="work-meta">
               <span class="pill">Responsive</span>
               <span class="pill">Modern UI</span>
@@ -210,49 +208,52 @@
           </div>
         </article>
 
-        <!-- SLIDE 2 -->
-        <article class="work-slide">
-          <div class="work-visual">
-            <img src="assets/work/logo-brand.jpg" alt="Logo and branding project">
-            <span class="overlay-pill">Branding</span>
+        <!-- CARD 2 -->
+        <article class="work-card">
+          <div class="work-media">
+            <img src="assets/work/project-2.jpg" alt="Project 2 preview" />
+            <span class="overlay-pill">Logo + Branding</span>
           </div>
-          <div class="work-content">
+          <div class="work-body">
             <h3>Logo + Brand Refresh</h3>
-            <p>New logo system with consistent colors and digital assets.</p>
+            <p>Short description here (concept, color system, brand kit assets, etc.).</p>
             <div class="work-meta">
               <span class="pill">Logo</span>
               <span class="pill">Brand Kit</span>
+              <span class="pill">Social Assets</span>
             </div>
           </div>
         </article>
 
-        <!-- SLIDE 3 -->
-        <article class="work-slide">
-          <div class="work-visual">
-            <img src="assets/work/landing-page.jpg" alt="Landing page design">
+        <!-- CARD 3 -->
+        <article class="work-card">
+          <div class="work-media">
+            <img src="assets/work/project-3.jpg" alt="Project 3 preview" />
             <span class="overlay-pill">Landing Page</span>
           </div>
-          <div class="work-content">
+          <div class="work-body">
             <h3>Lead-Gen Landing Page</h3>
-            <p>High-conversion landing page focused on bookings.</p>
+            <p>Short description here (booking focus, conversion layout, CTA strategy).</p>
             <div class="work-meta">
               <span class="pill">Conversion</span>
               <span class="pill">Fast</span>
+              <span class="pill">CTA-focused</span>
             </div>
           </div>
         </article>
 
-        <!-- SLIDE 4 -->
-        <article class="work-slide">
-          <div class="work-visual">
-            <img src="assets/work/portfolio.jpg" alt="Portfolio website">
+        <!-- CARD 4 -->
+        <article class="work-card">
+          <div class="work-media">
+            <img src="assets/work/project-4.jpg" alt="Project 4 preview" />
             <span class="overlay-pill">Portfolio</span>
           </div>
-          <div class="work-content">
+          <div class="work-body">
             <h3>Portfolio Website</h3>
-            <p>Gallery-focused design showcasing work clearly.</p>
+            <p>Short description here (gallery layout, clarity, clean typography).</p>
             <div class="work-meta">
               <span class="pill">Portfolio</span>
+              <span class="pill">Clean UI</span>
               <span class="pill">Branding</span>
             </div>
           </div>
@@ -260,55 +261,28 @@
 
       </div>
 
-      <div class="work-controls">
-        <button class="work-btn prev" data-prev>‹</button>
-        <button class="work-btn next" data-next>›</button>
-      </div>
     </div>
-
-    <div class="work-dots">
-      <button class="dot active" data-dot="0"></button>
-      <button class="dot" data-dot="1"></button>
-      <button class="dot" data-dot="2"></button>
-      <button class="dot" data-dot="3"></button>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </main>
 
 <footer class="footer">
   <div class="container">
     <div class="foot">
-      <div class="small"><strong>Palmetto Digital</strong></div>
-      <div class="small">© <span id="year"></span></div>
+      <div class="small">
+        <strong>Palmetto Digital</strong> • Modern websites & logo design
+      </div>
+      <div class="small">
+        © <span id="year"></span> Palmetto Digital. All rights reserved.
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  (function(){
-    const track = document.querySelector("[data-track]");
-    const slides = Array.from(track.children);
-    const prev = document.querySelector("[data-prev]");
-    const next = document.querySelector("[data-next]");
-    const dots = document.querySelectorAll("[data-dot]");
-    let index = 0;
-
-    function go(i){
-      index = (i + slides.length) % slides.length;
-      track.style.transform = `translateX(${-index * 100}%)`;
-      dots.forEach(d => d.classList.toggle("active", Number(d.dataset.dot) === index));
-    }
-
-    prev.onclick = () => go(index - 1);
-    next.onclick = () => go(index + 1);
-    dots.forEach(d => d.onclick = () => go(Number(d.dataset.dot)));
-  })();
 </script>
+<script src="main.js"></script>
 
 </body>
 </html>
