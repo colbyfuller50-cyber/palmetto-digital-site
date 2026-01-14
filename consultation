@@ -156,7 +156,7 @@
   <div class="container">
 
     <div class="nav">
-      <a class="brand" href="index.html" aria-label="Palmetto Digital home">
+      <a class="brand" href="index" aria-label="Palmetto Digital home">
         <img src="palmetto-digital-logo.png" alt="Palmetto Digital logo" />
       </a>
 
@@ -169,18 +169,18 @@
 
       <!-- Desktop nav -->
       <nav class="navlinks" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Past Work</a>
+        <a href="index">Home</a>
+        <a href="services">Services</a>
+        <a href="work">Past Work</a>
         <a href="consultation">Request a Consultation</a>
       </nav>
 
       <!-- Mobile dropdown menu -->
       <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
         <nav class="mobile-links" aria-label="Mobile navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="work.html">Past Work</a>
+          <a href="index">Home</a>
+          <a href="services">Services</a>
+          <a href="work">Past Work</a>
           <a href="consultation">Request a Consultation</a>
         </nav>
       </div>
