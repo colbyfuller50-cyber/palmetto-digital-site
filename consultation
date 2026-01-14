@@ -172,7 +172,7 @@
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="work.html">Past Work</a>
-        <a href="consultation.html">Request a Consultation</a>
+        <a href="consultation">Request a Consultation</a>
       </nav>
 
       <!-- Mobile dropdown menu -->
@@ -181,7 +181,7 @@
           <a href="index.html">Home</a>
           <a href="services.html">Services</a>
           <a href="work.html">Past Work</a>
-          <a href="consultation.html">Request a Consultation</a>
+          <a href="consultation">Request a Consultation</a>
         </nav>
       </div>
     </div>
