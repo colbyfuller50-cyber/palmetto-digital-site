@@ -3,339 +3,1085 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Branding & Web Consultation Guide • Palmetto Digital</title>
+  <meta name="description" content="Palmetto Digital — Branding & Web Consultation Guide" />
+  <title>Consultation Guide • Palmetto Digital</title>
+
+  <!-- Uses your existing global theme -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* =============================
-       CONSULTATION GUIDE PAGE
-       ============================= */
+    /* ======================================
+       CONSULTATION GUIDE — VISUAL + IN-DEPTH
+       ====================================== */
 
-    .guide-hero {
-      padding: 4.5rem 0 3rem;
-      text-align: center;
+    /* Layout helpers */
+    .guide-wrap { padding: 2.4rem 0 4.2rem; }
+    .guide-title { text-align: center; padding: 3.8rem 0 2.2rem; }
+    .guide-title .logo-row{
+      display:flex; justify-content:center; align-items:center; gap:.9rem; flex-wrap:wrap;
     }
-
-    .guide-hero h1 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      margin-bottom: .5rem;
+    .guide-title img{
+      height: 52px; width:auto; object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(11,30,58,.18));
     }
-
-    .guide-hero .sub {
-      max-width: 70ch;
-      margin: 0 auto;
-      color: rgba(11,18,32,.75);
+    .guide-title h1{
+      font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+      margin: .6rem 0 .5rem;
+      letter-spacing: -.6px;
+      color: var(--navy);
+    }
+    .guide-title .subtitle{
+      display:inline-flex;
+      gap:.5rem;
+      align-items:center;
+      padding: .45rem .85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(242,140,40,.35);
+      background: rgba(242,140,40,.10);
+      font-weight: 900;
+      color: rgba(11,18,32,.85);
+    }
+    .guide-title p{
+      max-width: 74ch;
+      margin: 1rem auto 0;
+      color: rgba(11,18,32,.74);
       font-size: 1.05rem;
+      line-height: 1.65;
     }
 
-    /* ---------- SECTION ---------- */
-    .guide-section {
-      padding: 3rem 0;
+    .section-block{ padding: 2.2rem 0; }
+    .section-block h2{
+      margin: 0 0 .5rem;
+      font-size: 1.6rem;
+      letter-spacing: -.35px;
+    }
+    .section-block p.lead{
+      margin: 0 0 1.2rem;
+      color: rgba(11,18,32,.74);
+      max-width: 78ch;
     }
 
-    .guide-section h2 {
-      margin-bottom: .4rem;
-    }
-
-    .guide-section p.lead {
-      max-width: 72ch;
-      color: rgba(11,18,32,.72);
-    }
-
-    /* ---------- WEBSITE MOCKUP ---------- */
-    .mockup {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .mockup-frame {
-      border-radius: 18px;
-      background: #fff;
+    /* Cards */
+    .visual-card{
+      border-radius: var(--radius);
       border: 1px solid var(--border);
-      box-shadow: 0 16px 40px rgba(11,30,58,.14);
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 14px 32px rgba(11,30,58,.10);
       overflow: hidden;
     }
 
-    .mockup-header {
-      height: 48px;
-      background: linear-gradient(90deg, var(--navy), var(--navy-2));
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      gap: .6rem;
-    }
-
-    .mockup-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.5);
-    }
-
-    .mockup-body {
-      padding: 1.5rem;
-      display: grid;
+    /* ======================================
+       PROCESS TIMELINE (VISUAL)
+       ====================================== */
+    .timeline{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
       gap: 1rem;
     }
-
-    .mockup-block {
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(11,30,58,.08);
+    .step{
+      grid-column: span 3;
+      padding: 1.15rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.80);
+      box-shadow: 0 10px 24px rgba(11,30,58,.08);
+      position: relative;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-
-    .mockup-hero {
-      height: 120px;
+    .step:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(11,30,58,.16);
+    }
+    .step .num{
+      width: 40px; height: 40px;
       border-radius: 14px;
-      background: linear-gradient(
-        135deg,
-        rgba(31,120,180,.25),
-        rgba(242,140,40,.22)
-      );
+      display:inline-flex; align-items:center; justify-content:center;
+      border: 1px solid var(--border);
+      background: rgba(31,120,180,.10);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: .65rem;
+    }
+    .step h3{ margin: 0 0 .35rem; font-size: 1.05rem; }
+    .step p{ margin: 0; color: rgba(11,18,32,.74); font-weight: 650; }
+    .step .mini{
+      margin-top: .65rem;
+      display:flex; flex-wrap:wrap; gap:.4rem;
+    }
+    .chip{
+      font-size: .8rem; font-weight: 850;
+      border-radius: 999px;
+      padding: .28rem .5rem;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.60);
+      color: rgba(11,18,32,.78);
+    }
+    .chip.orange{ border-color: rgba(242,140,40,.35); background: rgba(242,140,40,.10); }
+    .chip.blue{ border-color: rgba(31,120,180,.30); background: rgba(31,120,180,.10); }
+
+    @media (max-width: 980px){
+      .step{ grid-column: span 6; }
+    }
+    @media (max-width: 620px){
+      .step{ grid-column: span 12; }
     }
 
-    /* ---------- ARROW NOTES ---------- */
-    .annotations {
-      display: grid;
+    /* ======================================
+       WEBSITE MOCKUP + ARROWS (DESKTOP)
+       ====================================== */
+    .mock-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .mockup{
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .browserbar{
+      height: 52px;
+      display:flex;
+      align-items:center;
+      padding: 0 1rem;
+      gap:.6rem;
+      background: linear-gradient(90deg, var(--navy), var(--navy-2));
+      color: rgba(255,255,255,.92);
+      font-weight: 850;
+    }
+    .dots{ display:flex; gap:.35rem; margin-right:.35rem; }
+    .dot{ width:10px; height:10px; border-radius:999px; background: rgba(255,255,255,.42); }
+    .url{
+      flex:1;
+      padding:.45rem .7rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.20);
+      font-size: .9rem;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+    }
+
+    .page{
+      padding: 1.25rem;
+      display:grid;
+      gap: 1rem;
+      background:
+        radial-gradient(900px 420px at 20% 0%, rgba(242,140,40,.10), transparent 60%),
+        radial-gradient(800px 420px at 85% 0%, rgba(31,120,180,.10), transparent 55%),
+        #fff;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       gap: 1rem;
     }
-
-    .note {
-      display: flex;
-      gap: .75rem;
-      align-items: flex-start;
+    .logo-box{
+      width: 130px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(11,30,58,.06);
+      position: relative;
+    }
+    .nav-box{
+      flex: 1;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(11,30,58,.06);
+    }
+    .cta-box{
+      width: 150px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(242,140,40,.35);
+      background: rgba(242,140,40,.14);
     }
 
-    .arrow {
-      font-size: 1.2rem;
-      color: var(--orange);
+    .hero-zone{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hero-copy{
+      height: 140px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(31,120,180,.08);
+    }
+    .hero-image{
+      height: 140px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(11,30,58,.85), rgba(31,120,180,.60)),
+        radial-gradient(650px 220px at 20% 40%, rgba(242,140,40,.38), transparent 65%);
+      position: relative;
+    }
+
+    .cards-row{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .85rem;
+    }
+    .mini-card{
+      height: 88px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(11,30,58,.06);
+    }
+
+    /* Callout bubbles + arrows */
+    .callout{
+      position: absolute;
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      padding: .38rem .6rem;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: .82rem;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(11,30,58,.55);
+      color: #fff;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 24px rgba(11,30,58,.22);
+      z-index: 3;
+      white-space: nowrap;
+    }
+    .callout.orange{
+      background: rgba(242,140,40,.35);
+      border-color: rgba(242,140,40,.45);
+      color: #1a1208;
+    }
+    .callout.blue{
+      background: rgba(31,120,180,.28);
+      border-color: rgba(31,120,180,.35);
+    }
+
+    .arrowline{
+      position:absolute;
+      height:2px;
+      background: rgba(255,255,255,.65);
+      z-index:2;
+      transform-origin: left center;
+      opacity: .9;
+    }
+    .arrowline:after{
+      content:"";
+      position:absolute;
+      right:-6px; top:-4px;
+      width: 0; height: 0;
+      border-left: 8px solid rgba(255,255,255,.75);
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+    }
+
+    /* Place callouts (desktop) */
+    .c-logo{ top: 72px; left: 18px; }
+    .a-logo{ top: 95px; left: 120px; width: 80px; transform: rotate(10deg); }
+
+    .c-nav{ top: 72px; right: 210px; }
+    .a-nav{ top: 92px; right: 260px; width: 110px; transform: rotate(-10deg); }
+
+    .c-cta{ top: 72px; right: 18px; }
+    .a-cta{ top: 94px; right: 120px; width: 90px; transform: rotate(-6deg); }
+
+    .c-brand{ top: 170px; left: 18px; }
+    .a-brand{ top: 202px; left: 160px; width: 120px; transform: rotate(12deg); }
+
+    .c-mobile{ bottom: 20px; right: 20px; }
+    .a-mobile{ bottom: 90px; right: 160px; width: 120px; transform: rotate(-28deg); }
+
+    .guide-notes{
+      display:grid;
+      gap: .85rem;
+    }
+    .note{
+      display:flex;
+      gap:.75rem;
+      align-items:flex-start;
+      padding: .9rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 10px 22px rgba(11,30,58,.08);
+    }
+    .note .pin{
+      width: 38px; height: 38px;
+      border-radius: 14px;
+      display:inline-flex;
+      align-items:center; justify-content:center;
+      border: 1px solid var(--border);
+      background: rgba(242,140,40,.12);
       font-weight: 900;
     }
+    .note p{ margin: 0; color: rgba(11,18,32,.78); font-weight: 650; }
+    .note strong{ color: var(--navy); }
 
-    .note p {
-      margin: 0;
-      font-weight: 650;
-      color: rgba(11,18,32,.8);
+    @media (max-width: 980px){
+      .mock-grid{ grid-template-columns: 1fr; }
+      .hero-zone{ grid-template-columns: 1fr; }
+      .cards-row{ grid-template-columns: 1fr; }
+      .callout, .arrowline{ display:none; } /* keeps it clean on small screens */
     }
 
-    /* ---------- CAPABILITIES ---------- */
-    .cap-grid {
-      margin-top: 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* ======================================
+       MOBILE MOCKUP VISUAL (SEPARATE)
+       ====================================== */
+    .mobile-visuals{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      align-items: start;
     }
 
-    .cap-card {
+    .phone{
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 14px 32px rgba(11,30,58,.10);
+      overflow:hidden;
+      position: relative;
+    }
+    .phone-top{
+      height: 46px;
+      background: linear-gradient(90deg, rgba(11,30,58,.92), rgba(31,120,180,.60));
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:900;
+      letter-spacing:.2px;
+    }
+    .phone-body{
+      padding: 1rem;
+      display:grid;
+      gap:.75rem;
+    }
+    .phone-hero{
+      height: 120px;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(242,140,40,.24), rgba(31,120,180,.16)),
+        radial-gradient(480px 220px at 20% 40%, rgba(242,140,40,.26), transparent 60%);
+      border: 1px solid var(--border);
+    }
+    .phone-line{ height: 14px; border-radius: 999px; background: rgba(11,30,58,.08); }
+    .phone-btns{
+      display:flex; gap:.5rem;
+    }
+    .phone-btn{
+      height: 38px; flex: 1;
+      border-radius: 14px;
+      border: 1px solid rgba(242,140,40,.35);
+      background: rgba(242,140,40,.14);
+    }
+    .phone-btn.alt{
+      border: 1px solid var(--border);
+      background: rgba(11,30,58,.06);
+    }
+
+    .mobile-points{
+      display:grid;
+      gap:.85rem;
+    }
+
+    @media (max-width: 900px){
+      .mobile-visuals{ grid-template-columns: 1fr; }
+    }
+
+    /* ======================================
+       BRAND KIT VISUAL
+       ====================================== */
+    .brandkit{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .kit{
       padding: 1.2rem;
       border-radius: var(--radius);
-      background: rgba(255,255,255,.8);
       border: 1px solid var(--border);
+      background: rgba(255,255,255,.82);
       box-shadow: 0 10px 28px rgba(11,30,58,.10);
     }
 
-    .cap-card h3 {
-      margin: 0 0 .35rem;
+    .swatches{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:.7rem;
+      margin-top: .75rem;
     }
-
-    /* ---------- PRICING ---------- */
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .price-card {
-      padding: 1.4rem;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.85);
+    .swatch{
+      border-radius: 16px;
       border: 1px solid var(--border);
-      box-shadow: 0 12px 30px rgba(11,30,58,.12);
+      overflow:hidden;
+      background:#fff;
     }
-
-    .price-card strong {
-      font-size: 1.4rem;
-      display: block;
-      margin-bottom: .5rem;
-      color: var(--navy);
-    }
-
-    .price-card ul {
-      padding-left: 1.1rem;
-      margin: .5rem 0 0;
-    }
-
-    .price-card li {
-      margin-bottom: .35rem;
-      font-weight: 650;
+    .swatch .color{ height: 54px; }
+    .swatch .label{
+      padding: .5rem .6rem;
+      font-size: .85rem;
+      font-weight: 850;
       color: rgba(11,18,32,.75);
     }
 
-    /* ---------- FINAL PITCH ---------- */
-    .final-pitch {
-      text-align: center;
-      padding: 4rem 0 4.5rem;
+    .type-sample{
+      margin-top: .75rem;
+      display:grid;
+      gap:.35rem;
+    }
+    .type-sample .big{
+      font-weight: 950;
+      font-size: 1.6rem;
+      letter-spacing: -.6px;
+      color: var(--navy);
+    }
+    .type-sample .mid{ font-weight: 850; color: rgba(11,18,32,.82); }
+    .type-sample .small{ color: rgba(11,18,32,.72); }
+
+    @media (max-width: 900px){
+      .brandkit{ grid-template-columns: 1fr; }
     }
 
-    .final-pitch h2 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      margin-bottom: .8rem;
+    /* ======================================
+       SEO + PERFORMANCE VISUAL
+       ====================================== */
+    .checkgrid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+    .checkcard{
+      grid-column: span 4;
+      padding: 1.15rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 10px 28px rgba(11,30,58,.10);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .checkcard:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(11,30,58,.16);
+    }
+    .checkcard h3{ margin: 0 0 .35rem; }
+    .checks{ list-style:none; padding:0; margin:.7rem 0 0; display:grid; gap:.5rem; }
+    .checks li{
+      display:flex; gap:.55rem; align-items:flex-start;
+      color: rgba(11,18,32,.76);
+      font-weight: 650;
+    }
+    .tick{
+      width: 22px; height: 22px;
+      border-radius: 8px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border: 1px solid var(--border);
+      background: rgba(31,120,180,.10);
+      color: var(--navy);
+      font-weight: 900;
+      flex: 0 0 auto;
     }
 
-    .final-pitch p {
-      max-width: 70ch;
-      margin: 0 auto;
-      font-size: 1.05rem;
+    @media (max-width: 980px){
+      .checkcard{ grid-column: span 6; }
+    }
+    @media (max-width: 640px){
+      .checkcard{ grid-column: span 12; }
+    }
+
+    /* ======================================
+       PRICING (MORE DETAILED)
+       ====================================== */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .pricecard{
+      grid-column: span 6;
+      padding: 1.35rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 12px 30px rgba(11,30,58,.12);
+      transition: transform .2s ease, box-shadow .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricecard:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(11,30,58,.16);
+    }
+    .pricecard.reco{
+      border: 1px solid rgba(242,140,40,.35);
+      box-shadow:
+        0 12px 32px rgba(11,30,58,.12),
+        0 0 0 6px rgba(242,140,40,.10);
+    }
+    .pillbadge{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding: .35rem .6rem;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: .82rem;
+      border: 1px solid rgba(242,140,40,.35);
+      background: rgba(242,140,40,.12);
+      color: #1a1208;
+      margin-bottom: .65rem;
+    }
+    .pricehead{
+      display:flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .pricehead h3{
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: -.2px;
+      color: var(--navy);
+    }
+    .bigprice{
+      display:inline-flex;
+      align-items: baseline;
+      gap: .35rem;
+      padding: .45rem .65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .bigprice strong{ font-size: 1.1rem; }
+    .bigprice span{ font-size: .9rem; color: rgba(11,18,32,.65); font-weight: 850; }
+    .pricecard p{
+      margin: .7rem 0 0;
+      color: rgba(11,18,32,.74);
+      line-height: 1.6;
+    }
+
+    .feat{
+      list-style:none;
+      padding:0;
+      margin: .85rem 0 0;
+      display:grid;
+      gap:.55rem;
+    }
+    .feat li{
+      display:flex;
+      gap:.55rem;
+      align-items:flex-start;
       color: rgba(11,18,32,.78);
+      font-weight: 650;
+    }
+    .mark{
+      width: 22px; height: 22px;
+      border-radius: 8px;
+      display:inline-flex;
+      align-items:center; justify-content:center;
+      border: 1px solid var(--border);
+      background: rgba(31,120,180,.10);
+      color: var(--navy);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+    .mark.orange{ background: rgba(242,140,40,.14); border-color: rgba(242,140,40,.35); color: #1a1208; }
+
+    .addons{
+      margin-top: 1.1rem;
+      display:flex; flex-wrap:wrap; gap:.45rem;
     }
 
-    @media (max-width: 880px) {
-      .mockup {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 900px){
+      .pricecard{ grid-column: span 12; }
     }
+
+    /* ======================================
+       FINAL PITCH
+       ====================================== */
+    .pitch{
+      text-align: center;
+      padding: 3.8rem 0 4.2rem;
+    }
+    .pitch h2{
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin: 0 0 .9rem;
+      letter-spacing: -.4px;
+    }
+    .pitch p{
+      max-width: 78ch;
+      margin: 0 auto;
+      color: rgba(11,18,32,.78);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    /* Keep footer centered (matches your other pages) */
+    .footer .foot { justify-content: center !important; text-align: center; }
+    .footer .foot > div { width: 100%; }
   </style>
 </head>
 
 <body>
 
-<main>
-
-  <!-- TITLE -->
-  <section class="guide-hero">
-    <h1>Palmetto Digital – Branding & Web Consultation Guide</h1>
-    <p class="sub">Crafting Your Reputation & Trust</p>
-  </section>
-
-  <!-- INTRO -->
-  <section class="guide-section">
+  <!-- Keep your normal header/nav from your other pages.
+       If you want it on this page too, paste your header here. -->
+  <header class="header">
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="container">
-      <h2>How We Approach Every Project</h2>
-      <p class="lead">
-        We tailor every project to your unique needs. This guide shows how Palmetto Digital builds
-        trust, credibility, and confidence through strategic digital branding.
-      </p>
-    </div>
-  </section>
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Palmetto Digital home">
+          <img src="assets/palmetto-digital-logo.png" alt="Palmetto Digital logo" />
+        </a>
 
-  <!-- GRAPHIC -->
-  <section class="guide-section">
-    <div class="container mockup">
+        <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobileMenu">
+          ☰ Menu
+        </button>
 
-      <!-- WEBSITE MOCKUP -->
-      <div class="mockup-frame">
-        <div class="mockup-header">
-          <div class="mockup-dot"></div>
-          <div class="mockup-dot"></div>
-          <div class="mockup-dot"></div>
-        </div>
-        <div class="mockup-body">
-          <div class="mockup-block"></div>
-          <div class="mockup-hero"></div>
-          <div class="mockup-block"></div>
-          <div class="mockup-block"></div>
+        <nav class="navlinks" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="work.html">Past Work</a>
+          <a href="consultation.html">Request a Consultation</a>
+        </nav>
+
+        <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+          <nav class="mobile-links" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Past Work</a>
+            <a href="consultation.html">Request a Consultation</a>
+          </nav>
         </div>
       </div>
+    </div>
+  </header>
 
-      <!-- NOTES -->
-      <div class="annotations">
-        <div class="note">
-          <div class="arrow">➜</div>
-          <p><strong>Logo placement</strong> builds instant recognition.</p>
+  <main id="main" class="guide-wrap">
+
+    <!-- TITLE PAGE -->
+    <section class="guide-title">
+      <div class="container">
+        <div class="logo-row">
+          <img src="assets/palmetto-digital-logo.png" alt="Palmetto Digital logo" />
         </div>
-        <div class="note">
-          <div class="arrow">➜</div>
-          <p><strong>Navigation structure</strong> creates clarity and ease.</p>
-        </div>
-        <div class="note">
-          <div class="arrow">➜</div>
-          <p><strong>Calls-to-action</strong> guide users confidently.</p>
-        </div>
-        <div class="note">
-          <div class="arrow">➜</div>
-          <p><strong>Brand colors</strong> reinforce professionalism.</p>
-        </div>
-        <div class="note">
-          <div class="arrow">➜</div>
-          <p><strong>Mobile-responsive design</strong> ensures accessibility everywhere.</p>
+
+        <h1>Palmetto Digital – Branding & Web Consultation Guide</h1>
+
+        <div class="subtitle">Crafting Your Reputation & Trust</div>
+
+        <p>
+          <strong>Every build is customized to your customer’s needs.</strong>
+          The examples and packages shown here are a starting point — they do not limit the full capabilities of Palmetto Digital.
+          Our job is to create a digital presence that makes your business look credible, trustworthy, and ready to be hired.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section-block">
+      <div class="container">
+        <h2>What This Consultation Covers</h2>
+        <p class="lead">
+          We tailor every project to your unique goals. This guide shows how we build trust and reputation through
+          website structure, clear messaging, brand consistency, and performance.
+        </p>
+
+        <div class="timeline" aria-label="Consultation roadmap">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Discovery</h3>
+            <p>We learn your business, your customers, your services, and your competitive edge.</p>
+            <div class="mini">
+              <span class="chip blue">Audience</span>
+              <span class="chip">Goals</span>
+              <span class="chip">Proof</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Brand & Messaging</h3>
+            <p>We define the look + words that communicate trust and authority.</p>
+            <div class="mini">
+              <span class="chip orange">Brand kit</span>
+              <span class="chip">Tone</span>
+              <span class="chip">CTA</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Build & Design</h3>
+            <p>We design and develop a mobile-first site that is clean, fast, and conversion-ready.</p>
+            <div class="mini">
+              <span class="chip blue">Mobile-first</span>
+              <span class="chip">Modern UI</span>
+              <span class="chip">Speed</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">4</div>
+            <h3>Launch & Support</h3>
+            <p>We launch, track performance, and support you with updates and improvements.</p>
+            <div class="mini">
+              <span class="chip orange">Analytics</span>
+              <span class="chip">SEO</span>
+              <span class="chip">Retainer</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- GRAPHIC SECTION: WEBSITE MOCKUP + ARROWS -->
+    <section class="section-block">
+      <div class="container">
+        <h2>What Builds Trust on a Website</h2>
+        <p class="lead">
+          A professional website isn’t just “pretty.” It’s structured to remove doubt and guide customers to take action.
+          Here’s how we design layouts that feel premium and trustworthy.
+        </p>
 
-  <!-- CAPABILITIES -->
-  <section class="guide-section">
+        <div class="mock-grid">
+          <div class="visual-card mockup">
+
+            <div class="browserbar">
+              <div class="dots">
+                <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+              </div>
+              <div class="url">yourbusiness.com • secure • fast • professional</div>
+            </div>
+
+            <div class="page">
+              <div class="topbar">
+                <div class="logo-box" aria-label="Logo placement"></div>
+                <div class="nav-box" aria-label="Navigation bar"></div>
+                <div class="cta-box" aria-label="Call-to-action button"></div>
+              </div>
+
+              <div class="hero-zone">
+                <div class="hero-copy" aria-label="Clear headline and service promise"></div>
+                <div class="hero-image" aria-label="Hero image area"></div>
+              </div>
+
+              <div class="cards-row" aria-label="Service cards / proof blocks">
+                <div class="mini-card"></div>
+                <div class="mini-card"></div>
+                <div class="mini-card"></div>
+              </div>
+            </div>
+
+            <!-- Callouts + arrows -->
+            <span class="callout c-logo">Logo = recognition</span>
+            <span class="arrowline a-logo"></span>
+
+            <span class="callout c-nav blue">Nav = clarity</span>
+            <span class="arrowline a-nav"></span>
+
+            <span class="callout c-cta orange">CTA = bookings</span>
+            <span class="arrowline a-cta"></span>
+
+            <span class="callout c-brand">Brand colors = trust</span>
+            <span class="arrowline a-brand"></span>
+
+            <span class="callout c-mobile blue">Mobile-first</span>
+            <span class="arrowline a-mobile"></span>
+          </div>
+
+          <div class="guide-notes">
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Logo placement</strong> builds instant recognition and makes you look established.</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Navigation</strong> removes confusion — customers find what they need faster.</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Calls-to-action</strong> guide visitors toward calling, booking, or requesting a quote.</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Brand consistency</strong> signals professionalism (colors, fonts, spacing, icons).</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Mobile responsiveness</strong> ensures accessibility — most customers view on phones.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MOBILE VISUALS -->
+    <section class="section-block">
+      <div class="container">
+        <h2>Mobile-First Matters</h2>
+        <p class="lead">
+          Most customers will see your website on a phone first. Our designs are built to be thumb-friendly,
+          fast, and easy to navigate — without losing the premium feel.
+        </p>
+
+        <div class="mobile-visuals">
+          <div class="phone" aria-label="Mobile mockup">
+            <div class="phone-top">Mobile View</div>
+            <div class="phone-body">
+              <div class="phone-hero"></div>
+              <div class="phone-line"></div>
+              <div class="phone-line" style="width:80%"></div>
+              <div class="phone-btns">
+                <div class="phone-btn" aria-label="Primary action"></div>
+                <div class="phone-btn alt" aria-label="Secondary action"></div>
+              </div>
+              <div class="phone-line"></div>
+              <div class="phone-line" style="width:70%"></div>
+            </div>
+          </div>
+
+          <div class="mobile-points">
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Fast load speed</strong> keeps customers from leaving.</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Easy buttons</strong> increase calls and quote requests.</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Readable layout</strong> makes your business feel premium and legitimate.</p>
+            </div>
+            <div class="note">
+              <div class="pin">✓</div>
+              <p><strong>Trust cues</strong> (reviews, proof, badges) show up clearly on mobile.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BRAND KIT VISUAL -->
+    <section class="section-block">
+      <div class="container">
+        <h2>Branding That Feels Consistent</h2>
+        <p class="lead">
+          Branding isn’t just a logo — it’s a system. We create a consistent look so your website, social media,
+          business cards, and marketing materials all match.
+        </p>
+
+        <div class="brandkit">
+          <div class="kit">
+            <h3 style="margin:0 0 .35rem;">Color Palette (Example)</h3>
+            <p style="margin:0;color:rgba(11,18,32,.72);">We build palettes that match your industry and signal trust.</p>
+
+            <div class="swatches">
+              <div class="swatch">
+                <div class="color" style="background: var(--navy)"></div>
+                <div class="label">Navy</div>
+              </div>
+              <div class="swatch">
+                <div class="color" style="background: var(--blue)"></div>
+                <div class="label">Blue</div>
+              </div>
+              <div class="swatch">
+                <div class="color" style="background: var(--orange)"></div>
+                <div class="label">Orange</div>
+              </div>
+              <div class="swatch">
+                <div class="color" style="background: rgba(11,18,32,.08)"></div>
+                <div class="label">Neutral</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kit">
+            <h3 style="margin:0 0 .35rem;">Typography + Layout</h3>
+            <p style="margin:0;color:rgba(11,18,32,.72);">Clean typography makes your business feel established.</p>
+
+            <div class="type-sample">
+              <div class="big">Bold headline for trust</div>
+              <div class="mid">Strong subhead for clarity</div>
+              <div class="small">Readable body text that explains services without feeling crowded.</div>
+            </div>
+
+            <div style="margin-top:.85rem; display:flex; gap:.5rem; flex-wrap:wrap;">
+              <span class="chip">Logo spacing rules</span>
+              <span class="chip blue">Button styles</span>
+              <span class="chip orange">Brand accents</span>
+              <span class="chip">Icon style</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEO + PERFORMANCE -->
+    <section class="section-block">
+      <div class="container">
+        <h2>SEO + Performance Foundation</h2>
+        <p class="lead">
+          We build sites to load fast, rank better, and convert visitors into real leads — without “tech overwhelm.”
+        </p>
+
+        <div class="checkgrid">
+          <div class="checkcard">
+            <h3>SEO Setup</h3>
+            <ul class="checks">
+              <li><span class="tick">✓</span> Page titles + descriptions</li>
+              <li><span class="tick">✓</span> Clean headings (H1–H3)</li>
+              <li><span class="tick">✓</span> Local/service keywords</li>
+              <li><span class="tick">✓</span> Structured layout</li>
+            </ul>
+          </div>
+
+          <div class="checkcard">
+            <h3>Speed + UX</h3>
+            <ul class="checks">
+              <li><span class="tick">✓</span> Mobile-first layout</li>
+              <li><span class="tick">✓</span> Compressed images</li>
+              <li><span class="tick">✓</span> Clean code</li>
+              <li><span class="tick">✓</span> Clear CTAs</li>
+            </ul>
+          </div>
+
+          <div class="checkcard">
+            <h3>Trust Builders</h3>
+            <ul class="checks">
+              <li><span class="tick">✓</span> Reviews/testimonials</li>
+              <li><span class="tick">✓</span> Project/gallery section</li>
+              <li><span class="tick">✓</span> Licensing/coverage cues</li>
+              <li><span class="tick">✓</span> Simple contact flow</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING (IN-DEPTH) -->
+    <section class="section-block">
+      <div class="container">
+        <h2>Pricing Overview</h2>
+        <p class="lead">
+          We keep pricing clear and simple. Your quote is based on scope, content, and how much trust-building is needed.
+        </p>
+
+        <div class="pricing">
+
+          <article class="pricecard reco">
+            <div class="pillbadge">⭐ Recommended</div>
+            <div class="pricehead">
+              <div>
+                <h3>Flat Package</h3>
+                <div style="font-weight:850;color:rgba(11,18,32,.78);">Custom Professional Website</div>
+              </div>
+              <div class="bigprice"><strong>$2,500</strong> <span>starting</span></div>
+            </div>
+
+            <p>
+              Best for businesses that want a complete website built the right way — fast, modern, mobile-first, and ready to convert.
+            </p>
+
+            <ul class="feat">
+              <li><span class="mark orange">✓</span> 5–7 high-impact sections (hero, services, proof, about, CTA, contact)</li>
+              <li><span class="mark orange">✓</span> Mobile responsive (phones, tablets, desktop)</li>
+              <li><span class="mark orange">✓</span> SEO-ready structure + best practices</li>
+              <li><span class="mark orange">✓</span> Analytics included (traffic + performance tracking)</li>
+              <li><span class="mark orange">✓</span> GitHub-ready handoff (you own the code)</li>
+            </ul>
+
+            <div class="addons" aria-label="Add-ons">
+              <span class="chip">Extra pages</span>
+              <span class="chip blue">Gallery</span>
+              <span class="chip orange">Brand kit</span>
+              <span class="chip">SEO boost</span>
+            </div>
+          </article>
+
+          <article class="pricecard">
+            <div class="pricehead">
+              <div>
+                <h3>Retainer Model</h3>
+                <div style="font-weight:850;color:rgba(11,18,32,.78);">Ongoing Updates + Improvements</div>
+              </div>
+              <div class="bigprice"><strong>$1,500</strong> <span>setup</span></div>
+            </div>
+
+            <p>
+              Smart option if you want ongoing support and improvements without paying for a full rebuild each time.
+              Great for businesses growing month-to-month.
+            </p>
+
+            <ul class="feat">
+              <li><span class="mark">✓</span> Setup includes baseline build + launch</li>
+              <li><span class="mark">✓</span> <strong>$150–$300/month</strong> ongoing support</li>
+              <li><span class="mark">✓</span> Updates & content edits</li>
+              <li><span class="mark">✓</span> SEO tweaks + performance improvements</li>
+              <li><span class="mark">✓</span> Guidance as your business grows</li>
+            </ul>
+
+            <div class="addons">
+              <span class="chip">Monthly edits</span>
+              <span class="chip blue">SEO tweaks</span>
+              <span class="chip">Speed improvements</span>
+              <span class="chip orange">New sections</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL PITCH -->
+    <section class="pitch">
+      <div class="container">
+        <h2>We’re Not Selling a Website — We’re Building Trust</h2>
+        <p>
+          At Palmetto Digital, we don’t just create websites or logos —
+          we build your company’s <strong>reputation</strong> and <strong>trust</strong> online.
+          <br /><br />
+          The goal is simple: when a customer finds you, your digital presence should instantly
+          communicate professionalism, reliability, and credibility — the same qualities you bring to your clients every day.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <h2>What We Do</h2>
-
-      <div class="cap-grid">
-        <div class="cap-card">
-          <h3>Custom Websites</h3>
-          <p>Multi-page sites, landing pages, and portfolios built from the ground up.</p>
-        </div>
-        <div class="cap-card">
-          <h3>Logo & Brand Kits</h3>
-          <p>Logos, color palettes, and visual systems for consistency everywhere.</p>
-        </div>
-        <div class="cap-card">
-          <h3>SEO & Performance</h3>
-          <p>Clean structure, fast load speeds, and search-friendly foundations.</p>
-        </div>
-        <div class="cap-card">
-          <h3>Ongoing Support</h3>
-          <p>Retainers, updates, improvements, and long-term guidance.</p>
-        </div>
+      <div class="foot">
+        <div class="small"><strong>Palmetto Digital</strong> • Modern websites & logo design</div>
+        <div class="small">© <span id="year"></span> Palmetto Digital. All rights reserved.</div>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- PRICING -->
-  <section class="guide-section">
-    <div class="container">
-      <h2>Pricing Overview</h2>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-      <div class="pricing">
-        <div class="price-card">
-          <strong>Flat Package — Starting at $2,500</strong>
-          <ul>
-            <li>Custom professional website</li>
-            <li>Mobile-responsive design</li>
-            <li>SEO-ready structure</li>
-            <li>Analytics integration</li>
-          </ul>
-        </div>
-
-        <div class="price-card">
-          <strong>Retainer Model</strong>
-          <ul>
-            <li>$1,500 setup</li>
-            <li>$150–$300/month</li>
-            <li>Updates & content edits</li>
-            <li>SEO & performance improvements</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL PITCH -->
-  <section class="final-pitch">
-    <h2>What We’re Really Building</h2>
-    <p>
-      At Palmetto Digital, we don’t just create websites or logos.
-      We build your company’s trust and reputation online.
-      <br /><br />
-      Your digital presence should reflect the same professionalism,
-      reliability, and credibility you bring to your clients every day.
-    </p>
-  </section>
-
-</main>
-
+  <script src="main.js"></script>
 </body>
 </html>
